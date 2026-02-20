@@ -25,17 +25,15 @@ public class App {
      * @throws IOException si ocurre un error al escribir el archivo JSON
      */
     public static void main(String[] args) throws IOException {
-        // IO.println("Ingresa el estado inicial de...");
-        // var sx = Validations.validateBote(IO.readln("Bote x (0-3):"), 3);
-        // var sy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
-        // var tree = new Node(sx, sy);
-        var tree = new Node(0, 0);
+        IO.println("Ingresa el estado inicial de...");
+        var sx = Validations.validateBote(IO.readln("Bote x (0-3):"), 3);
+        var sy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
+        var tree = new Node(sx, sy);
 
-        // IO.println("Ingresa el estado final de...");
-        // var fx = Validations.validateBote(IO.readln("Bote x (0-3):"), 3);
-        // var fy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
-        // var finalState = new State(fx, fy);
-        var finalState = new State(2, 0);
+        IO.println("Ingresa el estado final de...");
+        var fx = Validations.validateBote(IO.readln("Bote x (0-3):"), 3);
+        var fy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
+        var finalState = new State(fx, fy);
 
         var level = new ArrayList<Node>(List.of(tree));
 
