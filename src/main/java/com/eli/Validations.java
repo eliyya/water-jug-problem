@@ -1,7 +1,5 @@
 package com.eli;
 
-import java.util.ArrayList;
-
 /**
  * Utilidades de validación y búsqueda auxiliares para la aplicación.
  */
