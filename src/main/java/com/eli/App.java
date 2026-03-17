@@ -1,12 +1,7 @@
 package com.eli;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gson.GsonBuilder;
 
 /**
  * Punto de entrada de la aplicación que resuelve el problema de los jarros
@@ -30,37 +25,13 @@ public class App {
         var sy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
         var tree = new Node(sx, sy);
 
-        IO.println("Ingresa el estado final de...");
-        var fx = Validations.validateBote(IO.readln("Bote x (0-3):"), 3);
-        var fy = Validations.validateBote(IO.readln("Bote y (0-4):"), 4);
-        var finalState = new State(fx, fy);
-
-        var level = new ArrayList<Node>(List.of(tree));
-
-        Node finded;
-        while ((finded = Validations.find(level, finalState)) == null) {
-            var childrens = new ArrayList<Node>(level);
-            level.clear();
-            for (var node : childrens) {
-                level.addAll(node.generateChildrens());
-            }
+        var childrens = new ArrayList<Node>();
+        childrens.addAll(tree.generateChildrens());
+        
+        IO.println(tree);
+        for (var child : childrens) {
+            IO.println(child);
         }
-        IO.println("Encontrado");
-
-        var path = new ArrayList<Node>();
-        do {
-            path.add(finded);
-            finded = finded.parent();
-        } while (finded != null);
-        path.reversed().forEach(IO::println);
-
-        Files.writeString(
-                Paths.get("tree.json"),
-                new GsonBuilder()
-                        .setPrettyPrinting()
-                        .create().toJson(tree.toMap()));
-
-        IO.println("Se generó un archivo tree.json para visualizar el tree generado en jsoncrack.eliyya.dev/editor");
 
     }
 }

@@ -184,13 +184,4 @@ public class Node {
     public String toString() {
         return String.format("%s  \t -> %s", this.action, state.toString());
     }
-
-    public Map<String, Object> toMap() {
-        var map = new HashMap<String, Object>();
-        map.put("", state.toString());
-        this.childrens.forEach(c -> {
-            map.put(c.action, c.toMap());
-        });
-        return map;
-    }
 }

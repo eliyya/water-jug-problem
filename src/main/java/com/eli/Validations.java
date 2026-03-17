@@ -37,18 +37,4 @@ public class Validations {
         return state;
     }
 
-    /**
-     * Busca en una lista de nodos un nodo cuyo estado sea igual al indicado.
-     *
-     * @param list  lista de nodos a buscar
-     * @param state estado objetivo
-     * @return el nodo encontrado o `null` si no existe
-     */
-    static Node find(ArrayList<Node> list, State state) {
-        for (Node node : list) {
-            if (node.state().equals(state))
-                return node;
-        }
-        return null;
-    }
 }
