@@ -60,7 +60,8 @@ public class App {
                         .setPrettyPrinting()
                         .create().toJson(tree.toMap()));
 
-        IO.println("Se generó un archivo tree.json para visualizar el tree generado en jsoncrack.eliyya.dev/editor");
+        IO.println("Se generó un archivo tree.json para visualizar el tree"); 
+        IO.println("generado en jsoncrack.eliyya.dev/editor");
 
     }
 }
