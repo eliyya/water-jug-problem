@@ -1,9 +1,7 @@
 package com.eli;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Nodo del árbol de estados usado por la búsqueda en anchura. Cada nodo

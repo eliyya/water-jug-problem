@@ -44,14 +44,6 @@ public class State {
     }
 
     @Override
-    public final boolean equals(Object obj) {
-        if (obj instanceof State s) {
-            return s.x() == this.x() && s.y() == this.y();
-        }
-        return false;
-    }
-
-    @Override
     public String toString() {
         return String.format("(%d,%d)", x, y);
     }
